@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+    <div className="app-container">
+      {/* Branding */}
+      <header className="header">
+        <h1 className="title">PocketMate</h1>
+        <p className="tagline">Your friendly money companion</p>
+      </header>
+
+      {/* Simple intro */}
+      <main className="main-content">
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          Welcome to <strong>PocketMate</strong> 🎉  
+          Track your spending, set savings goals, and get smarter with your money.
         </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+        <button className="get-started">
+          Get Started
+        </button>
+      </main>
+    </div>
   )
 }
 
