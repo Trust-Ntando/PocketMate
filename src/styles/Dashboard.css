@@ -1,0 +1,130 @@
+/* General container */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Welcome Card */
+.welcome-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.welcome-card h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0388a6;
+}
+
+.welcome-card p {
+  margin-top: 8px;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Quick Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  border-radius: 16px;
+  color: #ffffff;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Stats colors */
+.stat-budget { background-color: #04d9d9; }
+.stat-savings { background-color: #0388a6; }
+.stat-transactions { background-color: black; }
+
+.stat-card h2 {
+  font-size: 1.1rem;
+}
+
+.stat-card p {
+  font-size: 1.8rem;
+  margin-top: 8px;
+}
+
+/* Forms */
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.input-form h3 {
+  margin: 0;
+  color: #0388a6;
+}
+
+.input-form input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.input-form button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #04d9d9;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.input-form button:hover {
+  background-color: #0388a6;
+}
+
+/* Transactions List */
+.transactions-list {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.transactions-list h3 {
+  margin: 0 0 12px 0;
+  color: #0388a6;
+}
+
+.transactions-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.transactions-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.transactions-list li:last-child {
+  border-bottom: none;
+}

@@ -1,30 +1,106 @@
+import { useState } from "react";
+import "../styles/Dashboard.css";
+
 function Dashboard() {
+  // State
+  const [budget, setBudget] = useState(0);
+  const [savings, setSavings] = useState(0);
+  const [transactions, setTransactions] = useState([]);
+  const [transactionInput, setTransactionInput] = useState({ description: "", amount: "" });
+  const [budgetInput, setBudgetInput] = useState("");
+
+  // Handlers
+  const handleBudgetSubmit = (e) => {
+    e.preventDefault();
+    const value = parseFloat(budgetInput);
+    if (!isNaN(value) && value > 0) {
+      setBudget(value);
+      setBudgetInput("");
+    }
+  };
+
+  const handleTransactionSubmit = (e) => {
+    e.preventDefault();
+    const value = parseFloat(transactionInput.amount);
+    if (transactionInput.description && !isNaN(value)) {
+      setTransactions([...transactions, { ...transactionInput, amount: value }]);
+      setSavings((prev) => prev + value);
+      setTransactionInput({ description: "", amount: "" });
+    }
+  };
+
   return (
-    <div className="space-y-6">
+    <div className="dashboard">
       {/* Welcome Card */}
-      <div className="bg-white rounded-2xl shadow p-6">
-        <h1 className="text-2xl font-bold text-gray-800">
-          Welcome to PocketMate
-        </h1>
-        <p className="text-gray-600 mt-2">
-          Your friendly money companion. Track budgets, manage transactions, and reach your savings goals.
-        </p>
+      <div className="welcome-card">
+        <h1>Welcome to PocketMate</h1>
+        <p>Your friendly money companion. Track budgets, manage transactions, and reach your savings goals.</p>
       </div>
 
       {/* Quick Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div className="bg-blue-500 text-white rounded-xl p-4 shadow">
-          <h2 className="text-lg font-semibold">Total Budget</h2>
-          <p className="text-2xl font-bold mt-2">R 0.00</p>
+      <div className="stats-grid">
+        <div className="stat-card stat-budget">
+          <h2>Total Budget</h2>
+          <p>R {budget.toFixed(2)}</p>
         </div>
-        <div className="bg-green-500 text-white rounded-xl p-4 shadow">
-          <h2 className="text-lg font-semibold">Total Savings</h2>
-          <p className="text-2xl font-bold mt-2">R 0.00</p>
+        <div className="stat-card stat-savings">
+          <h2>Total Savings</h2>
+          <p>R {savings.toFixed(2)}</p>
         </div>
-        <div className="bg-purple-500 text-white rounded-xl p-4 shadow">
-          <h2 className="text-lg font-semibold">Transactions</h2>
-          <p className="text-2xl font-bold mt-2">0</p>
+        <div className="stat-card stat-transactions">
+          <h2>Transactions</h2>
+          <p>{transactions.length}</p>
         </div>
+      </div>
+
+      {/* Budget Input */}
+      <form className="input-form" onSubmit={handleBudgetSubmit}>
+        <h3>Add / Update Budget</h3>
+        <input
+          type="number"
+          placeholder="Enter budget amount"
+          value={budgetInput}
+          onChange={(e) => setBudgetInput(e.target.value)}
+        />
+        <button type="submit">Set Budget</button>
+      </form>
+
+      {/* Transaction Input */}
+      <form className="input-form" onSubmit={handleTransactionSubmit}>
+        <h3>Add Transaction</h3>
+        <input
+          type="text"
+          placeholder="Description"
+          value={transactionInput.description}
+          onChange={(e) =>
+            setTransactionInput({ ...transactionInput, description: e.target.value })
+          }
+        />
+        <input
+          type="number"
+          placeholder="Amount"
+          value={transactionInput.amount}
+          onChange={(e) =>
+            setTransactionInput({ ...transactionInput, amount: e.target.value })
+          }
+        />
+        <button type="submit">Add Transaction</button>
+      </form>
+
+      {/* Transaction List */}
+      <div className="transactions-list">
+        <h3>Transactions</h3>
+        {transactions.length === 0 ? (
+          <p>No transactions yet.</p>
+        ) : (
+          <ul>
+            {transactions.map((t, index) => (
+              <li key={index}>
+                {t.description}: R {t.amount.toFixed(2)}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

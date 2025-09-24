@@ -1,0 +1,77 @@
+/* Root layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff; /* clean white background for main content */
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #04d9d9 0%, #0388a6 100%); /* gradient from logo colors */
+  color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.logo-container .logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.sidebar h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.nav-link {
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* subtle highlight on hover */
+  transform: translateX(4px);
+}
+
+.nav-link.active {
+  background-color: rgba(0, 0, 0, 0.25); /* active link uses black overlay */
+  font-weight: bold;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+/* Quick Stats card example (Dashboard) */
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.card-blue { background-color: #04d9d9; color: #ffffff; }
+.card-teal { background-color: #0388a6; color: #ffffff; }
+.card-black { background-color: #000000; color: #ffffff; }

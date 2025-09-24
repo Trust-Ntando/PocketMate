@@ -3,52 +3,37 @@ import Dashboard from "./pages/Dashboard";
 import BudgetTracker from "./pages/BudgetTracker";
 import Transactions from "./pages/Transactions";
 import SavingsGoals from "./pages/SavingsGoals";
+import './styles/App.css';
+import logo from './assets/logo-white.png';  // <-- import logo
 
 function App() {
   return (
     <Router>
-      <div className="flex h-screen bg-gray-50">
+      <div className="app-container">
         {/* Sidebar */}
-        <aside className="w-64 bg-blue-600 text-white p-6 flex flex-col">
-          <h1 className="text-2xl font-bold mb-8">PocketMate</h1>
-          <nav className="flex flex-col gap-4">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `hover:bg-blue-700 p-2 rounded ${isActive ? "bg-blue-700 font-bold" : ""}`
-              }
-            >
+        <aside className="sidebar">
+          <div className="logo-container">
+            <img src={logo} alt="PocketMate Logo" className="logo" />
+            <h1>PocketMate</h1>
+          </div>
+          <nav>
+            <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
               Dashboard
             </NavLink>
-            <NavLink
-              to="/budget"
-              className={({ isActive }) =>
-                `hover:bg-blue-700 p-2 rounded ${isActive ? "bg-blue-700 font-bold" : ""}`
-              }
-            >
+            <NavLink to="/budget" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
               Budget Tracker
             </NavLink>
-            <NavLink
-              to="/transactions"
-              className={({ isActive }) =>
-                `hover:bg-blue-700 p-2 rounded ${isActive ? "bg-blue-700 font-bold" : ""}`
-              }
-            >
+            <NavLink to="/transactions" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
               Transactions
             </NavLink>
-            <NavLink
-              to="/savings"
-              className={({ isActive }) =>
-                `hover:bg-blue-700 p-2 rounded ${isActive ? "bg-blue-700 font-bold" : ""}`
-              }
-            >
+            <NavLink to="/savings" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
               Savings Goals
             </NavLink>
           </nav>
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-auto">
+        <main className="main-content">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/budget" element={<BudgetTracker />} />
