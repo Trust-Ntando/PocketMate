@@ -1,12 +1,31 @@
-# React + Vite
+PocketMate 💰
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PocketMate is a personal finance dashboard built with React and Vite, designed to help users track budgets, manage transactions, and achieve their savings goals. It’s a modern, interactive, and responsive application that gives you quick insights into your finances.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dashboard Overview: See total budget, savings, and number of transactions at a glance.
 
-## Expanding the ESLint configuration
+Budget Tracker: Add, edit, and view your budgets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Transactions Management: Keep track of all your income and expenses.
+
+Savings Goals: Set goals and monitor your progress.
+
+Responsive Design: Works on desktop and mobile screens.
+
+Custom Styling: Clean UI with intuitive layouts and vibrant colors aligned with the app logo.
+
+Tech Stack
+
+Frontend: React + Vite
+
+Routing: React Router
+
+Styling: Custom CSS (no Tailwind)
+
+State Management: React useState and useEffect
+
+Installation & Setup
+
+Clone the repository:
