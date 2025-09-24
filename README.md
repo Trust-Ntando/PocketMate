@@ -2,7 +2,7 @@
 
 **PocketMate** is a personal finance dashboard built with **React** and **Vite**, designed to help users track budgets, manage transactions, and achieve their savings goals. It’s a modern, interactive, and responsive application that gives you quick insights into your finances.
 
-**🌐 Live Demo:** [Check it out on Netlify](https://preeminent-zuccutto-6a81b0.netlify.app/)
+**🌐 Live Demo:** [Deployed on Netlify](https://preeminent-zuccutto-6a81b0.netlify.app/)
 
 ---
 
